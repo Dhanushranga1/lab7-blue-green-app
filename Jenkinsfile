@@ -13,9 +13,9 @@ pipeline {
             steps {
                 // Start minikube (if not running) using the docker driver
                 // We must run this as the 'jenkins' user
-                sh 'sudo -u jenkins minikube status || sudo -u jenkins minikube start --driver=docker'
+                sh 'minikube status ||minikube start --driver=docker'
                 // Point kubectl to minikube's docker env
-                sh 'eval $(sudo -u jenkins minikube -p minikube docker-env)'
+                sh 'eval $(minikube -p minikube docker-env)'
             }
         }
 
