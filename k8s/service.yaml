@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: NodePort # This is simple for Minikube
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30007 # We exposed this port in our Terraform Security Group
+  selector:
+    app: myapp
+    color: blue # <-- STARTS AT BLUE
