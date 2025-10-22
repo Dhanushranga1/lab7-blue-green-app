@@ -19,12 +19,8 @@ pipeline {
             }
         }
 
-        stage('Clone Repo') {
-            steps {
-                // This is your GitHub repo URL
-                git 'https://github.com/Dhanushranga1/lab7-blue-green-app.git'
-            }
-        }
+
+
 
         stage('Apply Initial K8s Config') {
             steps {
